@@ -69,7 +69,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'protobuf_django.wsgi.application'
-
+ASGI_APPLICATION = 'protobuf_django.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

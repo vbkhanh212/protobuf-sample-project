@@ -1,6 +1,6 @@
 import requests
 from app.proto import data_pb2 #
-API_URL = "http://127.0.0.1:8000/api/data/" # Your DRF endpoint URL
+API_URL = "http://127.0.0.1:8000/api/data/" 
 
 # 1. Create a Protobuf message instance
 user_message = data_pb2.Data(
