@@ -36,7 +36,7 @@ class ProtobufUser(User):
                 try:
                     response_message = data_pb2.Data()
                     response_message.ParseFromString(response.content)
-
+                    print(response.content)
                     if response_message.name == "Roronoa Zoro" and response_message.age == 25:
                         # Fire Locust success event
                         self.environment.events.request.fire(

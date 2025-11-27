@@ -24,6 +24,7 @@ class DataView(APIView):
             received_message = request.data
             name = received_message.name
             age = received_message.age
+            des = received_message.description
             response_message = f"Protobuf received for client: {name}"
         else:
             name = request.data.get('name', 'Unknown')
@@ -34,6 +35,7 @@ class DataView(APIView):
             response_proto_data = dict_to_proto({
                 'name': name,
                 'age': age,
+                'description': des
             })
             return Response(response_proto_data, status=status.HTTP_200_OK)
         else:
