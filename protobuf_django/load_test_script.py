@@ -17,7 +17,7 @@ HEADERS_PROTOBUF = {
 
 class ProtobufUser(User):
     wait_time = between(1, 2.5)
-    host = "http://127.0.0.1:8000"
+    host = "http://127.0.0.1:8002"
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -36,7 +36,6 @@ class ProtobufUser(User):
                 try:
                     response_message = data_pb2.Data()
                     response_message.ParseFromString(response.content)
-                    print(response.content)
                     if response_message.name == "Roronoa Zoro" and response_message.age == 25:
                         # Fire Locust success event
                         self.environment.events.request.fire(
